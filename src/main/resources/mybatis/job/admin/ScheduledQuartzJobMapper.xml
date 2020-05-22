@@ -6,7 +6,7 @@
 
     <resultMap type="com.xqiang.job.admin.core.dao.bean.ScheduledQuartzJobInfo" id="BaseResultMap">
         <result property="id" column="id"/>
-        <result property="projectKey" column="project"/>
+        <result property="projectKey" column="project_key"/>
         <result property="jobClass" column="job_class"/>
         <result property="jobMethod" column="job_method"/>
         <result property="jobArguments" column="job_arguments"/>
@@ -15,6 +15,7 @@
         <result property="jobStatus" column="job_status"/>
         <result property="cronExpression" column="cron_expression"/>
         <result property="description" column="description"/>
+        <result property="lastRunTimestamp" column="last_run_timestamp"/>
         <result property="createTime" column="create_time"/>
         <result property="updateTime" column="update_time"/>
         <result property="createBy" column="create_by"/>
@@ -27,7 +28,7 @@
     <sql id="ScheduledQuartzJob_All_Columns">
         id, project_key, job_class, job_method, job_arguments,
         job_group, job_name, job_status, cron_expression,
-        description, create_time, update_time,create_by,create_name,update_by,update_name,del_flag
+        description,last_run_timestamp, create_time, update_time,create_by,create_name,update_by,update_name,del_flag
     </sql>
 
     <insert id="addByJob" parameterType="com.xqiang.job.admin.core.dao.bean.ScheduledQuartzJobInfo">
@@ -95,6 +96,9 @@
             </if>
             <if test="description!=null">
                 description=#{description,jdbcType=VARCHAR},
+            </if>
+            <if test="lastRunTimestamp!=null">
+                last_run_timestamp=#{lastRunTimestamp,jdbcType=BIGINT},
             </if>
             <if test="updateBy!=null">
                 update_by=#{updateBy,jdbcType=VARCHAR},

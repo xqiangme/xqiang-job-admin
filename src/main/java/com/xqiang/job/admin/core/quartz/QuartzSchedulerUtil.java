@@ -5,9 +5,10 @@ import com.xqiang.job.admin.core.config.ApplicationContextHelper;
 import com.xqiang.job.admin.core.dao.bean.ScheduledQuartzJobInfo;
 import com.xqiang.job.admin.common.enums.SysExceptionEnum;
 import com.xqiang.job.admin.common.exception.JobAdminExceptionJobAdmin;
-import lombok.extern.slf4j.Slf4j;
 import org.quartz.*;
 import org.quartz.impl.StdSchedulerFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeansException;
 
 import java.lang.reflect.Method;
@@ -15,9 +16,8 @@ import java.lang.reflect.Method;
 /**
  * @author mengqiang
  */
-@Slf4j
 public class QuartzSchedulerUtil {
-
+    private static Logger log = LoggerFactory.getLogger(QuartzSchedulerUtil.class);
     private static Scheduler scheduler;
     private static SchedulerFactory schedulerFactory = new StdSchedulerFactory();
 
@@ -41,8 +41,6 @@ public class QuartzSchedulerUtil {
      * 是否已经启动
      */
     public static boolean isStart(ScheduledQuartzJobInfo quartzJob) {
-        String triggerName = quartzJob.getTriggerName();
-
         TriggerKey triggerKey = TriggerKey.triggerKey(quartzJob.getTriggerName(),
                 quartzJob.getJobGroup());
         try {
@@ -82,6 +80,7 @@ public class QuartzSchedulerUtil {
             jobDetail.getJobDataMap().put(QuartzJobBean.TARGET_CLASS, quartzJob.getJobClass());
             jobDetail.getJobDataMap().put(QuartzJobBean.TARGET_METHOD, quartzJob.getJobMethod());
             jobDetail.getJobDataMap().put(QuartzJobBean.TARGET_ARGUMENTS, quartzJob.getJobArguments());
+            jobDetail.getJobDataMap().put(QuartzJobBean.PROJECT_KEY, quartzJob.getProjectKey());
 
             trigger = TriggerBuilder.newTrigger()
                     .withIdentity(triggerKey)

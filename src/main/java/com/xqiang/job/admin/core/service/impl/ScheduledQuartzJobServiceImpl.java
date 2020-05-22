@@ -13,24 +13,25 @@ import com.xqiang.job.admin.common.enums.SysExceptionEnum;
 import com.xqiang.job.admin.common.exception.JobAdminExceptionJobAdmin;
 import com.xqiang.job.admin.common.param.dto.JobTaskPageQueryDTO;
 import com.xqiang.job.admin.common.param.request.*;
+import com.xqiang.job.admin.common.param.response.HomeResultVO;
+import com.xqiang.job.admin.common.param.response.ScheduledQuartzJobDetailVO;
+import com.xqiang.job.admin.common.param.response.ScheduledQuartzJobPageVO;
 import com.xqiang.job.admin.common.util.IpAddressUtil;
 import com.xqiang.job.admin.common.util.JobAdminBeanCopyUtil;
 import com.xqiang.job.admin.common.util.JobAdminPageUtils;
 import com.xqiang.job.admin.common.util.JobAdminStringUtils;
 import com.xqiang.job.admin.common.util.compare.CompareObjectUtil;
 import com.xqiang.job.admin.core.config.BasicJobConfig;
+import com.xqiang.job.admin.core.dao.bean.ScheduledQuartzJobInfo;
 import com.xqiang.job.admin.core.dao.bean.ScheduledQuartzJobLogInfo;
 import com.xqiang.job.admin.core.dao.mapper.ScheduledQuartzJobLogMapper;
 import com.xqiang.job.admin.core.dao.mapper.ScheduledQuartzJobMapper;
 import com.xqiang.job.admin.core.quartz.QuartzSchedulerUtil;
 import com.xqiang.job.admin.core.service.ScheduledQuartzJobService;
-import com.xqiang.job.admin.core.dao.bean.ScheduledQuartzJobInfo;
-import com.xqiang.job.admin.common.param.response.HomeResultVO;
-import com.xqiang.job.admin.common.param.response.ScheduledQuartzJobDetailVO;
-import com.xqiang.job.admin.common.param.response.ScheduledQuartzJobPageVO;
-import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections.CollectionUtils;
 import org.quartz.CronExpression;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Service;
 
@@ -50,9 +51,10 @@ import java.util.concurrent.locks.ReentrantLock;
  * @version 1.0
  * @date 2020-05-16
  */
-@Slf4j
 @Service
 public class ScheduledQuartzJobServiceImpl implements ScheduledQuartzJobService {
+
+    private static Logger log = LoggerFactory.getLogger(ScheduledQuartzJobServiceImpl.class);
 
     @Resource
     private Environment environment;
@@ -171,6 +173,10 @@ public class ScheduledQuartzJobServiceImpl implements ScheduledQuartzJobService 
             if (ScheduledJobStatusEnum.ON.getValue().equals(jobInfo.getJobStatus()) &&
                     QuartzSchedulerUtil.isStart(jobInfo)) {
                 quartzJobItem.setJobStatus(ScheduledJobStatusEnum.ON.getValue());
+            }
+            quartzJobItem.setLastRunTime("");
+            if (jobInfo.getLastRunTimestamp() > 0) {
+                quartzJobItem.setLastRunTime(DateUtil.formatDateTime(new Date(jobInfo.getLastRunTimestamp())));
             }
             resultList.add(quartzJobItem);
         }

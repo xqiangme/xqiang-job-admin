@@ -58,6 +58,8 @@ public class ScheduledQuartzJobDetailVO implements Serializable {
      */
     private String description;
 
+    private String LastRunTime;
+
     /**
      * 创建时间
      */

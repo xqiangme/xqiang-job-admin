@@ -70,6 +70,9 @@ public class ScheduledQuartzJobInfo implements Serializable {
      */
     private String description;
 
+
+    private Long LastRunTimestamp;
+
     /**
      * 创建人ID
      */
