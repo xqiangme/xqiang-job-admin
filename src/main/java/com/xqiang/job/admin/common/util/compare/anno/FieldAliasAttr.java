@@ -8,6 +8,7 @@ import java.lang.annotation.Target;
 /**
  * 属性别名注解
  * 与工具类CompareObjectUtil 配合使用
+ *
  * @author mengq
  */
 @Retention(RetentionPolicy.RUNTIME)
@@ -16,6 +17,8 @@ public @interface FieldAliasAttr {
 
     /**
      * 属性别名
+     *
+     * @return "
      */
     String alias() default "";
 

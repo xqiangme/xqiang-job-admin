@@ -52,8 +52,8 @@ public class ScheduledQuartzUserServiceImpl implements ScheduledQuartzUserServic
     /**
      * 用户登录
      *
-     * @param loginParam
-     * @return
+     * @param loginParam 登录参数
+     * @return 用户信息
      */
     @Override
     public UserLoginResult login(JobTaskUserLoginBO loginParam) {
@@ -86,7 +86,7 @@ public class ScheduledQuartzUserServiceImpl implements ScheduledQuartzUserServic
     /**
      * 分页列表
      *
-     * @param queryBO
+     * @param queryBO 参数
      * @return 任务列表
      * @author mengq
      */
@@ -121,7 +121,7 @@ public class ScheduledQuartzUserServiceImpl implements ScheduledQuartzUserServic
     /**
      * 用户详情
      *
-     * @param operateBO
+     * @param operateBO 参数
      * @return 用户详情
      * @author mengq
      */
@@ -156,7 +156,7 @@ public class ScheduledQuartzUserServiceImpl implements ScheduledQuartzUserServic
     /**
      * 新增用户
      *
-     * @param saveParam
+     * @param saveParam 参数
      */
     @Override
     public void saveUser(JobTaskUserSaveBO saveParam) {
@@ -195,7 +195,7 @@ public class ScheduledQuartzUserServiceImpl implements ScheduledQuartzUserServic
     /**
      * 修改用户
      *
-     * @param updateBO
+     * @param updateBO 参数
      */
     @Override
     public void updateUser(JobTaskUserUpdateBO updateBO) {
@@ -232,7 +232,7 @@ public class ScheduledQuartzUserServiceImpl implements ScheduledQuartzUserServic
     /**
      * 修改用户权限
      *
-     * @param updateBO
+     * @param updateBO 参数
      */
     @Override
     public void updateUserPower(JobTaskUserUpdatePowerBO updateBO) {
@@ -267,7 +267,7 @@ public class ScheduledQuartzUserServiceImpl implements ScheduledQuartzUserServic
     /**
      * 修改密码
      *
-     * @param updateBO
+     * @param updateBO 参数
      */
     @Override
     public void updatePwd(JobTaskUserUpdatePwdBO updateBO) {
@@ -285,7 +285,7 @@ public class ScheduledQuartzUserServiceImpl implements ScheduledQuartzUserServic
     /**
      * 删除用户
      *
-     * @param operateBO
+     * @param operateBO 删除用户参数
      */
     @Override
     public void deleteUser(JobTaskUserOperateBO operateBO) {

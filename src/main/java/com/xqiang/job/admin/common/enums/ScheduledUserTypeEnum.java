@@ -7,7 +7,6 @@ import java.util.Map;
  * 用户类型枚举
  *
  * @author mengq
- * @date 2020-05-16
  */
 public enum ScheduledUserTypeEnum {
 

@@ -29,7 +29,7 @@ public class SchedulerQuartJobLogController {
     /**
      * 分页任务列表
      *
-     * @param queryBO
+     * @param queryBO 参数
      * @return 任务列表
      * @author mengq
      */
@@ -44,7 +44,7 @@ public class SchedulerQuartJobLogController {
     /**
      * 日志详情
      *
-     * @param detailBO
+     * @param detailBO 参数
      * @return 日志详情
      * @author mengq
      */

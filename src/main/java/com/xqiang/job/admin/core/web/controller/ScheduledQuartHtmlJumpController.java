@@ -23,6 +23,9 @@ public class ScheduledQuartHtmlJumpController {
     @Resource
     private BasicJobConfig basicJobConfig;
 
+    /**
+     * @return 登录页面
+     */
     @RequestMapping("/login")
     public ModelAndView login() {
         ModelAndView modelAndView = new ModelAndView("login");

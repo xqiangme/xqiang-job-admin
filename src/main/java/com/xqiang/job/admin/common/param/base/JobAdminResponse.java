@@ -40,6 +40,8 @@ public class JobAdminResponse implements Serializable {
      * success : true
      * errorCode : 默认 2000
      * errorMsg : 默认 ""
+     *
+     * @return JobAdminResponse
      */
     public static JobAdminResponse success() {
         return success(null);
@@ -50,6 +52,9 @@ public class JobAdminResponse implements Serializable {
      * success : true
      * errorCode : 默认 2000
      * errorMsg : 默认 ""
+     *
+     * @param data obj参数
+     * @return JobAdminResponse
      */
     public static JobAdminResponse success(Object data) {
         return new JobAdminResponse(data, SysExceptionEnum.OK.getCode(), EMPTY);

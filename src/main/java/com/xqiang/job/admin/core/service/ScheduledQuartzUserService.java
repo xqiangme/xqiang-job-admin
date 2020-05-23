@@ -15,14 +15,15 @@ public interface ScheduledQuartzUserService {
     /**
      * 用户登录
      *
-     * @param loginParam
+     * @param loginParam 登录参数
+     * @return 用户信息
      */
     UserLoginResult login(JobTaskUserLoginBO loginParam);
 
     /**
      * 分页列表
      *
-     * @param queryBO
+     * @param queryBO 查询参数
      * @return 任务列表
      * @author mengq
      */
@@ -31,7 +32,7 @@ public interface ScheduledQuartzUserService {
     /**
      * 用户详情
      *
-     * @param operateBO
+     * @param operateBO 参数
      * @return 用户详情
      * @author mengq
      */
@@ -49,14 +50,14 @@ public interface ScheduledQuartzUserService {
     /**
      * 新增用户
      *
-     * @param saveParam
+     * @param saveParam 新增参数
      */
     void saveUser(JobTaskUserSaveBO saveParam);
 
     /**
      * 修改用户
      *
-     * @param updateBO
+     * @param updateBO 参数
      */
     void updateUser(JobTaskUserUpdateBO updateBO);
 
@@ -70,14 +71,14 @@ public interface ScheduledQuartzUserService {
     /**
      * 修改密码
      *
-     * @param updateBO
+     * @param updateBO 参数
      */
     void updatePwd(JobTaskUserUpdatePwdBO updateBO);
 
     /**
      * 删除用户
      *
-     * @param operateBO
+     * @param operateBO 删除参数
      */
     void deleteUser(JobTaskUserOperateBO operateBO);
 

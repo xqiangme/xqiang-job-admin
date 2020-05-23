@@ -16,7 +16,7 @@ import java.util.*;
  * 注：
  * 1).支持自定义属性别名详见注解@FieldAliasAttr
  * 2).支持嵌套类
- * 3).支持简单的泛型，示例: List<xxx>
+ * 3).支持简单的泛型
  *
  * @author mengq
  */
@@ -34,7 +34,7 @@ public class CompareObjectUtil {
      * 获取存在变化的属性-新老内容集
      *
      * @param oldObj 旧对象(不可为空)
-     * @param oldObj 新对象(不可为空)
+     * @param newObj 新对象(不可为空)
      * @param clazz  对象类(不可为空)
      * @return key:属性名， value :[老值，新值]比较后的Map, 示例 {"username":["lisi","zhangsan"]}
      */
@@ -46,7 +46,7 @@ public class CompareObjectUtil {
      * 获取所有属性-新老内容集
      *
      * @param oldObj 旧对象(不可为空)
-     * @param oldObj 新对象(不可为空)
+     * @param newObj 新对象(不可为空)
      * @param clazz  对象类(不可为空)
      * @return key:属性名， value :[老值，新值]比较后的Map, 示例 {"username":["lisi","zhangsan"]}
      * @author mengqiang
@@ -59,7 +59,7 @@ public class CompareObjectUtil {
      * 获取同一个类中前后属性值
      *
      * @param oldObj        旧对象(不可为空)
-     * @param oldObj        新对象(不可为空)
+     * @param newObj        新对象(不可为空)
      * @param clazz         对象类(不可为空)
      * @param diffValueFlag 是否仅输出不同内容的属性
      * @return key:属性名， value :[老值，新值]比较后的Map, 示例 {"username":["lisi","zhangsan"]}

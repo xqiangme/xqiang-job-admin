@@ -32,6 +32,8 @@ public class QuartzSchedulerUtil {
 
     /**
      * 启动
+     *
+     * @throws SchedulerException e
      */
     public static void startScheduler() throws SchedulerException {
         scheduler.start();
@@ -39,6 +41,9 @@ public class QuartzSchedulerUtil {
 
     /**
      * 是否已经启动
+     *
+     * @param quartzJob 任务对象
+     * @return 是否启动
      */
     public static boolean isStart(ScheduledQuartzJobInfo quartzJob) {
         TriggerKey triggerKey = TriggerKey.triggerKey(quartzJob.getTriggerName(),
@@ -55,6 +60,8 @@ public class QuartzSchedulerUtil {
 
     /**
      * Quartz启动任务
+     *
+     * @param quartzJob 任务对象
      */
     public static void enable(ScheduledQuartzJobInfo quartzJob) {
         TriggerKey triggerKey = TriggerKey.triggerKey(quartzJob.getTriggerName(),
@@ -99,6 +106,8 @@ public class QuartzSchedulerUtil {
 
     /**
      * Quartz停止任务
+     *
+     * @param quartzJob 任务对象
      */
     public static void disable(ScheduledQuartzJobInfo quartzJob) {
         TriggerKey triggerKey = TriggerKey.triggerKey(quartzJob.getTriggerName(),
@@ -124,6 +133,11 @@ public class QuartzSchedulerUtil {
 
     /**
      * 校验任务类或-方法是否在环境中存在
+     *
+     * @param jobClass     "
+     * @param targetMethod "
+     * @param methodArgs   "
+     * @return 是否
      */
     public static Boolean checkBeanAndMethodIsExists(String jobClass, String targetMethod, String methodArgs) {
         try {
@@ -136,6 +150,10 @@ public class QuartzSchedulerUtil {
 
     /**
      * 校验任务类或-方法是否在环境中存在
+     *
+     * @param jobClass     "
+     * @param targetMethod "
+     * @param methodArgs   "
      */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public static void checkBeanAndMethodExists(String jobClass, String targetMethod, String methodArgs) {
@@ -164,11 +182,10 @@ public class QuartzSchedulerUtil {
     }
 
     /**
-     * 处理Job设置的参数
-     * 多个使用#&分隔，推荐使用单个String 类型JSON参数
+     * 处理Job设置的参数多个使用分隔，推荐使用单个String 类型JSON参数
      *
-     * @param methodArgs
-     * @return
+     * @param methodArgs 参数
+     * @return 数字
      */
     public static Object[] getJobArgs(String methodArgs) {
         //参数处理
@@ -187,8 +204,8 @@ public class QuartzSchedulerUtil {
     /**
      * 处理参数
      *
-     * @param jobArs
-     * @return
+     * @param jobArs 参数
+     * @return 数组
      */
     @SuppressWarnings({"rawtypes"})
     public static Class[] getParameters(Object[] jobArs) {

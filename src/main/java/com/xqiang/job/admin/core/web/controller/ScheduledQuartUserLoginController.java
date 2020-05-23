@@ -50,6 +50,12 @@ public class ScheduledQuartUserLoginController {
     public static final String CACHE_VERIFY_CODE_KEY = "CACHE_VERIFY_CODE_KEY";
 
 
+    /**
+     * 生成验证码
+     *
+     * @param response response
+     * @throws IOException e
+     */
     @RequestMapping("/getVerifyCode")
     public void getCaptcha(HttpServletResponse response) throws IOException {
         log.debug("[request] getCaptcha");
@@ -77,6 +83,10 @@ public class ScheduledQuartUserLoginController {
 
     /**
      * 用户登录
+     *
+     * @param loginParam param
+     * @param response   param
+     * @return 登录用户信息
      */
     @PostMapping("/in")
     public JobAdminResponse loginIn(@RequestBody JobTaskUserLoginBO loginParam, HttpServletResponse response) {
@@ -97,6 +107,10 @@ public class ScheduledQuartUserLoginController {
 
     /**
      * 用户登出
+     *
+     * @param request  req
+     * @param response res
+     * @return 登出
      */
     @RequestMapping("/out")
     public JobAdminResponse loginOut(HttpServletRequest request, HttpServletResponse response) {
@@ -126,6 +140,8 @@ public class ScheduledQuartUserLoginController {
 
     /**
      * 获取登录用户信息
+     *
+     * @return 登录用户信息
      */
     @RequestMapping("/getUserInfo")
     public JobAdminResponse getUserInfo() {

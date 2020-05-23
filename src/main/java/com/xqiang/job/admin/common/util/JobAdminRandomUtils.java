@@ -8,8 +8,6 @@ import java.util.Random;
 
 /**
  * @author mengq
- * @date 2020-05-17
- * @desc
  */
 public class JobAdminRandomUtils {
 

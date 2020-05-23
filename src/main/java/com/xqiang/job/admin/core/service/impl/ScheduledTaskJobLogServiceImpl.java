@@ -26,7 +26,6 @@ import java.util.List;
  *
  * @author mengq
  * @version 1.0
- * @date 2020-05-16
  */
 @Slf4j
 @Service
@@ -41,7 +40,7 @@ public class ScheduledTaskJobLogServiceImpl implements ScheduledQuartzJobLogServ
     /**
      * 分页日志列表
      *
-     * @param queryBO
+     * @param queryBO 查询参数
      * @return 任务列表
      * @author mengq
      */
@@ -69,7 +68,7 @@ public class ScheduledTaskJobLogServiceImpl implements ScheduledQuartzJobLogServ
     /**
      * 日志详情
      *
-     * @param detailBO
+     * @param detailBO 查询参数
      * @return 日志详情
      * @author mengq
      */
@@ -82,7 +81,7 @@ public class ScheduledTaskJobLogServiceImpl implements ScheduledQuartzJobLogServ
     /**
      * 构建查询参数
      *
-     * @param queryBO
+     * @param queryBO 查询参数
      * @return
      */
     private JobTaskLogPageQueryDTO buildLogQueryParam(JobTaskLogPageQueryBO queryBO) {

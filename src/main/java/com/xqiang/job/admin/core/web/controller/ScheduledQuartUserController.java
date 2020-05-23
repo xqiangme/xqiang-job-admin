@@ -30,7 +30,7 @@ public class ScheduledQuartUserController {
     /**
      * 分页列表
      *
-     * @param queryBO
+     * @param queryBO 入参
      * @return 分页列表
      * @author mengq
      */
@@ -45,7 +45,7 @@ public class ScheduledQuartUserController {
     /**
      * 任务详情
      *
-     * @param queryBO
+     * @param queryBO 入参
      * @return 任务详情
      * @author mengq
      */
@@ -57,7 +57,7 @@ public class ScheduledQuartUserController {
     /**
      * 用户详情
      *
-     * @return 用户个人详情
+     * @return 用户详情
      * @author mengq
      */
     @RequestMapping("/getUserPersonDetail")
@@ -68,7 +68,8 @@ public class ScheduledQuartUserController {
     /**
      * 新增用户
      *
-     * @param saveBO
+     * @param saveBO 入参
+     * @return 新增用户
      * @author mengq
      */
     @RequestMapping("/save")
@@ -81,7 +82,8 @@ public class ScheduledQuartUserController {
     /**
      * 修改用户
      *
-     * @param updateBO
+     * @param updateBO 入参
+     * @return 修改用户
      * @author mengq
      */
     @RequestMapping("/update")
@@ -94,7 +96,8 @@ public class ScheduledQuartUserController {
     /**
      * 修改密码
      *
-     * @param updateBO
+     * @param updateBO 入参
+     * @return 修改密码
      * @author mengq
      */
     @RequestMapping("/update-pwd")
@@ -107,7 +110,8 @@ public class ScheduledQuartUserController {
     /**
      * 修改权限
      *
-     * @param updateBO
+     * @param updateBO 入参
+     * @return 修改权限
      * @author mengq
      */
     @RequestMapping("/update-power")
@@ -120,7 +124,8 @@ public class ScheduledQuartUserController {
     /**
      * 删除用户
      *
-     * @param saveBO
+     * @param saveBO 入参
+     * @return 删除用户
      * @author mengq
      */
     @RequestMapping("/delete")

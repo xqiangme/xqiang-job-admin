@@ -22,6 +22,8 @@ public class JobAdminShiroOperation {
     /**
      * 设置过期时间
      * 单位 ms,设置负数为永不超时
+     *
+     * @param expirationtime 时间毫秒数
      */
     public static void setSessionExpirationTime(long expirationtime) {
         SecurityUtils.getSubject().getSession().setTimeout(expirationtime);
@@ -29,6 +31,8 @@ public class JobAdminShiroOperation {
 
     /**
      * 获取当前登录用户
+     *
+     * @return 用户信息
      */
     public static UserLoginResult getCurrentUser() {
         Object principal = SecurityUtils.getSubject().getPrincipal();
@@ -42,6 +46,8 @@ public class JobAdminShiroOperation {
 
     /**
      * 获取 sessionId
+     *
+     * @return "
      */
     public static Serializable getSessionId() {
         return SecurityUtils.getSubject().getSession().getId();
@@ -50,6 +56,8 @@ public class JobAdminShiroOperation {
 
     /**
      * 缓存获取当前用户权限
+     *
+     * @return 用户权限
      */
     public static Set<String> getPermissions() {
         Set<String> userPermissions =
@@ -59,6 +67,8 @@ public class JobAdminShiroOperation {
 
     /**
      * 设置权限缓存
+     *
+     * @param userPermissions "
      */
     public static void setPermissions(Set<String> userPermissions) {
         Session session = SecurityUtils.getSubject().getSession();
@@ -67,6 +77,9 @@ public class JobAdminShiroOperation {
 
     /**
      * 设置缓存
+     *
+     * @param key   "
+     * @param value "
      */
     public static void setCacheParam(String key, Object value) {
         Session session = SecurityUtils.getSubject().getSession();
@@ -75,6 +88,9 @@ public class JobAdminShiroOperation {
 
     /**
      * 获取缓存
+     *
+     * @param key "
+     * @return 参数值
      */
     public static Object getCacheParam(String key) {
         Session session = SecurityUtils.getSubject().getSession();
@@ -83,6 +99,8 @@ public class JobAdminShiroOperation {
 
     /**
      * 获取当前登录用户名
+     *
+     * @return 登录用户
      */
     public static String getCurrentUserName() {
         UserLoginResult user = (UserLoginResult) SecurityUtils.getSubject().getPrincipal();
@@ -91,6 +109,8 @@ public class JobAdminShiroOperation {
 
     /**
      * 获取当前登录用户真实姓名
+     *
+     * @return 用户信息
      */
     public static String getCurrentRealName() {
         UserLoginResult user = (UserLoginResult) SecurityUtils.getSubject().getPrincipal();

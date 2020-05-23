@@ -28,8 +28,8 @@ public class IpAddressUtil {
     /**
      * 根据Ip地址获取地理位置
      *
-     * @param ipAddress
-     * @return
+     * @param ipAddress "
+     * @return ip地址
      */
     public static String getAddressByIp(String ipAddress) {
         if (null == ipAddress || "".equals(ipAddress)) {

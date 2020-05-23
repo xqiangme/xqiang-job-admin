@@ -49,7 +49,6 @@ import java.util.concurrent.locks.ReentrantLock;
  *
  * @author mengq
  * @version 1.0
- * @date 2020-05-16
  */
 @Service
 public class ScheduledQuartzJobServiceImpl implements ScheduledQuartzJobService {
@@ -125,7 +124,7 @@ public class ScheduledQuartzJobServiceImpl implements ScheduledQuartzJobService 
     /**
      * 分页任务列表
      *
-     * @param queryBO
+     * @param queryBO 参数
      * @return 任务列表
      * @author mengq
      */
@@ -159,8 +158,8 @@ public class ScheduledQuartzJobServiceImpl implements ScheduledQuartzJobService 
     /**
      * 构建任务分页列表
      *
-     * @param jobList
-     * @return
+     * @param jobList 参数
+     * @return 列表
      */
     private List<ScheduledQuartzJobDetailVO> buildScheduledQuartzJobList(List<ScheduledQuartzJobInfo> jobList) {
         ScheduledQuartzJobDetailVO quartzJobItem = null;
@@ -187,7 +186,7 @@ public class ScheduledQuartzJobServiceImpl implements ScheduledQuartzJobService 
     /**
      * 任务详情
      *
-     * @param operateBO
+     * @param operateBO 参数
      * @return 任务详情
      * @author mengq
      */
@@ -205,7 +204,7 @@ public class ScheduledQuartzJobServiceImpl implements ScheduledQuartzJobService 
     /**
      * 新增任务
      *
-     * @param jobSaveBO
+     * @param jobSaveBO 新增参数
      * @author mengq
      */
     @Override
@@ -239,8 +238,7 @@ public class ScheduledQuartzJobServiceImpl implements ScheduledQuartzJobService 
     /**
      * 修改任务
      *
-     * @param updateBO
-     * @return
+     * @param updateBO 参数
      */
     @Override
     public void updateJob(JobTaskUpdateBO updateBO) {
@@ -286,7 +284,7 @@ public class ScheduledQuartzJobServiceImpl implements ScheduledQuartzJobService 
     /**
      * 删除任务
      *
-     * @param operateBO
+     * @param operateBO 参数
      */
     @Override
     public void deleteJob(JobTaskOperateBO operateBO) {
@@ -315,7 +313,7 @@ public class ScheduledQuartzJobServiceImpl implements ScheduledQuartzJobService 
     /**
      * 启动任务
      *
-     * @param operateBO
+     * @param operateBO 参数
      * @author mengq
      */
     @Override
@@ -360,7 +358,7 @@ public class ScheduledQuartzJobServiceImpl implements ScheduledQuartzJobService 
     /**
      * 停止任务
      *
-     * @param operateBO
+     * @param operateBO 参数
      * @author mengq
      */
     @Override
@@ -396,8 +394,8 @@ public class ScheduledQuartzJobServiceImpl implements ScheduledQuartzJobService 
     /**
      * 任务新增前置校验
      *
-     * @param projectKey
-     * @param jobInfo
+     * @param projectKey 项目key
+     * @param jobInfo    任务对象
      */
     private void checkBeforeAdd(String projectKey, ScheduledQuartzJobInfo jobInfo) {
         //基本参数校验
@@ -418,8 +416,8 @@ public class ScheduledQuartzJobServiceImpl implements ScheduledQuartzJobService 
     /**
      * 任务修改前-基础参数置校验
      *
-     * @param jobInfo
-     * @param updateBO
+     * @param jobInfo  参数
+     * @param updateBO 参数
      */
     private void checkBaseBeforeUpdate(ScheduledQuartzJobInfo jobInfo, JobTaskUpdateBO updateBO) {
         //基本参数校验
@@ -435,8 +433,8 @@ public class ScheduledQuartzJobServiceImpl implements ScheduledQuartzJobService 
     /**
      * 任务修改前-重复与是否变更校验
      *
-     * @param jobInfo
-     * @param updateBO
+     * @param jobInfo  参数
+     * @param updateBO 参数
      */
     private void checkBeforeUpdate(String projectKey, ScheduledQuartzJobInfo jobInfo, ScheduledQuartzJobInfo oldJob, JobTaskUpdateBO updateBO) {
         //比较前后是否变化
@@ -455,9 +453,9 @@ public class ScheduledQuartzJobServiceImpl implements ScheduledQuartzJobService 
     /**
      * 更新任务-记录操作日志
      *
-     * @param jobId
-     * @param oldJobInfo
-     * @param operateBO
+     * @param jobId      "
+     * @param oldJobInfo "
+     * @param operateBO  "
      */
     private void addLogAfterUpdate(Integer jobId, ScheduledQuartzJobInfo oldJobInfo, JobBaseOperateBO operateBO) {
         try {
@@ -477,9 +475,9 @@ public class ScheduledQuartzJobServiceImpl implements ScheduledQuartzJobService 
     /**
      * 添加日志
      *
-     * @param jobId
-     * @param logTypeEnum
-     * @param operateBO
+     * @param jobId       "
+     * @param logTypeEnum "
+     * @param operateBO   "
      */
     private void addLog(Integer jobId, SchedulerJobLogTypeEnum logTypeEnum, JobBaseOperateBO operateBO) {
         try {
@@ -496,10 +494,10 @@ public class ScheduledQuartzJobServiceImpl implements ScheduledQuartzJobService 
     /**
      * 添加日志
      *
-     * @param jobId
-     * @param logTypeEnum
-     * @param operateBO
-     * @param content
+     * @param jobId       "
+     * @param logTypeEnum "
+     * @param operateBO   "
+     * @param content     "
      */
     private void doAddLog(Integer jobId, SchedulerJobLogTypeEnum logTypeEnum, JobBaseOperateBO operateBO, String content) {
         String projectKey = this.getProjectKeyKey();

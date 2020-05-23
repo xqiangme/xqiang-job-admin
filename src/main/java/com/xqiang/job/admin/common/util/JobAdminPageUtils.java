@@ -39,13 +39,6 @@ public class JobAdminPageUtils {
         return pageSize;
     }
 
-    /**
-     * list分页
-     *
-     * @param list
-     * @param pageNo
-     * @param pageSize
-     */
     public static <T> List<T> listPage(List<T> list, Integer pageNo, Integer pageSize) {
         if (null == list || list.isEmpty()) {
             return list;

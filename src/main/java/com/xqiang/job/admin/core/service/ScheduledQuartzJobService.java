@@ -13,7 +13,6 @@ import com.xqiang.job.admin.common.param.response.ScheduledQuartzJobPageVO;
  *
  * @author mengq
  * @version 1.0
- * @date 2020-05-16
  */
 public interface ScheduledQuartzJobService {
 
@@ -28,7 +27,7 @@ public interface ScheduledQuartzJobService {
     /**
      * 分页任务列表
      *
-     * @param queryBO
+     * @param queryBO 参数
      * @return 任务列表
      * @author mengq
      */
@@ -37,7 +36,7 @@ public interface ScheduledQuartzJobService {
     /**
      * 任务详情
      *
-     * @param operateBO
+     * @param operateBO 参数
      * @return 任务详情
      * @author mengq
      */
@@ -46,7 +45,7 @@ public interface ScheduledQuartzJobService {
     /**
      * 新增任务
      *
-     * @param jobSaveBO
+     * @param jobSaveBO 参数
      * @author mengq
      */
     void addJob(JobTaskSaveBO jobSaveBO);
@@ -55,7 +54,7 @@ public interface ScheduledQuartzJobService {
     /**
      * 启动任务
      *
-     * @param operateBO
+     * @param operateBO 参数
      * @author mengq
      */
     void startJob(JobTaskOperateBO operateBO);
@@ -64,7 +63,7 @@ public interface ScheduledQuartzJobService {
     /**
      * 停止任务
      *
-     * @param operateBO
+     * @param operateBO 参数
      * @author mengq
      */
     void stopJob(JobTaskOperateBO operateBO);
@@ -73,14 +72,14 @@ public interface ScheduledQuartzJobService {
     /**
      * 修改任务
      *
-     * @param updateBO
+     * @param updateBO 修改参数
      */
     void updateJob(JobTaskUpdateBO updateBO);
 
     /**
      * 删除任务
      *
-     * @param operateBO
+     * @param operateBO 删除参数
      */
     void deleteJob(JobTaskOperateBO operateBO);
 

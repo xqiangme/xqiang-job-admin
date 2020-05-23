@@ -4,7 +4,6 @@ package com.xqiang.job.admin.common.constant;
  * Job -admin 常量类
  *
  * @author mengq
- * @date 2020-05-16
  */
 public class JobAdminOpenConstant {
 

@@ -9,8 +9,6 @@ import java.util.Date;
 
 /**
  * @author mengq
- * @date 2020-05-16
- * @desc
  */
 @Data
 public class UserInfoPageDetailVO implements Serializable {

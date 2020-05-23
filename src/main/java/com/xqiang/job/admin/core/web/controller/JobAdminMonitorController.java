@@ -10,8 +10,6 @@ import java.util.Date;
 
 /**
  * @author mengq
- * @date 2020-05-17
- * @desc
  */
 @Slf4j
 @RestController

@@ -13,6 +13,11 @@ public class JobAdminBeanCopyUtil {
 
     /**
      * 对象属性拷贝
+     *
+     * @param source      来源
+     * @param targetClass 目标
+     * @param <T>         目标类型
+     * @return 值
      */
     public static <T> T copy(Object source, Class<T> targetClass) {
         T t = null;
@@ -27,6 +32,11 @@ public class JobAdminBeanCopyUtil {
 
     /**
      * 对象集合属性拷贝
+     *
+     * @param orig 来源
+     * @param dest 目标
+     * @param <T>  目标类型
+     * @return 值
      */
     public static <T> List<T> copyList(List orig, Class<T> dest) {
         try {

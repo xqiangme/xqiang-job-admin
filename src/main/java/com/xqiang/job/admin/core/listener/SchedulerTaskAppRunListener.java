@@ -23,7 +23,6 @@ import java.util.List;
  * 监听项目启动后查询到需要启动的项目并启动
  *
  * @author mengq
- * @date 2020-05-16
  */
 @Slf4j
 @Component
@@ -55,6 +54,8 @@ public class SchedulerTaskAppRunListener extends ApplicationObjectSupport implem
 
     /**
      * 启动全部任务 本地测试的时候，调度器不会启动； 测试环境默认只启动一个Debug用的JOB 线上会按照数据库读取任务
+     *
+     * @return 数量
      */
     public int startAll() {
         try {
@@ -77,6 +78,8 @@ public class SchedulerTaskAppRunListener extends ApplicationObjectSupport implem
 
     /**
      * 启动需要启动的任务
+     *
+     * @return 行数
      */
     private int doRunTaskAfterApplicationRun() {
         //启用的任务

@@ -10,14 +10,13 @@ import com.xqiang.job.admin.common.param.response.ScheduledQuartzJobLogPageVO;
  *
  * @author mengq
  * @version 1.0
- * @date 2020-05-16
  */
 public interface ScheduledQuartzJobLogService {
 
     /**
      * 分页日志列表
      *
-     * @param queryBO
+     * @param queryBO 参数
      * @return 任务列表
      * @author mengq
      */
@@ -26,7 +25,7 @@ public interface ScheduledQuartzJobLogService {
     /**
      * 日志详情
      *
-     * @param detailBO
+     * @param detailBO 参数
      * @return 日志详情
      * @author mengq
      */

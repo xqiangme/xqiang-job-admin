@@ -8,14 +8,14 @@ public interface ExceptionEnumInterface {
     /**
      * 提示码
      *
-     * @return
+     * @return code
      */
     Integer getCode();
 
     /**
      * 提示信息
      *
-     * @return
+     * @return msg
      */
     String getMsg();
 }

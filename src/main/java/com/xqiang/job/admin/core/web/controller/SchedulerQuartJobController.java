@@ -32,6 +32,7 @@ public class SchedulerQuartJobController {
     /**
      * 首页统计
      *
+     * @return 首页统计
      * @author mengq
      */
     @RequestMapping("/getHomeCount")
@@ -43,7 +44,7 @@ public class SchedulerQuartJobController {
     /**
      * 分页任务列表
      *
-     * @param queryBO
+     * @param queryBO 查询参数
      * @return 任务列表
      * @author mengq
      */
@@ -58,7 +59,7 @@ public class SchedulerQuartJobController {
     /**
      * 任务详情
      *
-     * @param queryBO
+     * @param queryBO 参数
      * @return 任务详情
      * @author mengq
      */
@@ -70,7 +71,8 @@ public class SchedulerQuartJobController {
     /**
      * 启动任务
      *
-     * @param operateBO
+     * @param operateBO 参数
+     * @return 启动任务
      * @author mengq
      */
     @RequestMapping("/start")
@@ -83,7 +85,8 @@ public class SchedulerQuartJobController {
     /**
      * 停止任务
      *
-     * @param operateBO
+     * @param operateBO 入参
+     * @return 停止任务
      * @author mengq
      */
     @RequestMapping("/stop")
@@ -96,7 +99,8 @@ public class SchedulerQuartJobController {
     /**
      * 修改任务
      *
-     * @param updateBO
+     * @param updateBO 入参
+     * @return 修改任务
      */
     @RequestMapping("/update")
     public JobAdminResponse updateJob(@RequestBody JobTaskUpdateBO updateBO) {
@@ -108,7 +112,8 @@ public class SchedulerQuartJobController {
     /**
      * 新增任务
      *
-     * @param jobSaveBO
+     * @param jobSaveBO 入参
+     * @return 新增任务
      * @author mengq
      */
     @RequestMapping("/save")
@@ -121,7 +126,8 @@ public class SchedulerQuartJobController {
     /**
      * 删除任务
      *
-     * @param operateBO
+     * @param operateBO 入参
+     * @return 删除任务
      */
     @RequestMapping("/delete")
     public JobAdminResponse deleteJob(@RequestBody JobTaskOperateBO operateBO) {

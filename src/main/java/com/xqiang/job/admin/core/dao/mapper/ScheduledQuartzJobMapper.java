@@ -19,14 +19,14 @@ public interface ScheduledQuartzJobMapper {
     /**
      * 新增任务，初始状态为不启动
      *
-     * @param job
+     * @param job 参数
      */
     void addByJob(ScheduledQuartzJobInfo job);
 
     /**
      * 更新任务
      *
-     * @param job
+     * @param job 参数
      * @return 更新行数
      */
     int updateByProjectAndId(ScheduledQuartzJobInfo job);
@@ -34,8 +34,10 @@ public interface ScheduledQuartzJobMapper {
     /**
      * 移除任务
      *
-     * @param id
-     * @param projectKey
+     * @param id         任务ID
+     * @param projectKey 项目key
+     * @param updateBy   更新人
+     * @param updateName 更新人名
      * @return 移除行数
      */
     int removeByProjectAndId(@Param("id") Integer id, @Param("projectKey") String projectKey, @Param("updateBy") String updateBy, @Param("updateName") String updateName);
@@ -43,8 +45,8 @@ public interface ScheduledQuartzJobMapper {
     /**
      * 根据ID查询任务
      *
-     * @param id
-     * @return
+     * @param id 任务ID
+     * @return 任务详情
      */
     ScheduledQuartzJobInfo getJobById(@Param("id") Integer id);
 
@@ -52,9 +54,9 @@ public interface ScheduledQuartzJobMapper {
     /**
      * 根据项目与ID查询任务
      *
-     * @param id
-     * @param projectKey
-     * @return
+     * @param id         任务ID
+     * @param projectKey 项目key
+     * @return 列表
      */
     ScheduledQuartzJobInfo getJobByProjectAndId(@Param("id") Integer id, @Param("projectKey") String projectKey);
 
@@ -62,25 +64,25 @@ public interface ScheduledQuartzJobMapper {
     /**
      * 根据条件统计
      *
-     * @param queryBO
-     * @return
+     * @param queryBO 参数
+     * @return 统计
      */
     Integer countByCondition(JobTaskPageQueryDTO queryBO);
 
     /**
      * 根据条件分页查询任务
      *
-     * @param queryBO
-     * @return
+     * @param queryBO 参数
+     * @return 列表
      */
     List<ScheduledQuartzJobInfo> listPageByCondition(JobTaskPageQueryDTO queryBO);
 
     /**
      * 根据项目key与任务状态任务
      *
-     * @param projectKey
-     * @param jobStatus
-     * @return
+     * @param projectKey 项目key
+     * @param jobStatus  状态
+     * @return 列表
      */
     List<ScheduledQuartzJobInfo> getJobListByProjectAndStatus(@Param("projectKey") String projectKey, @Param("jobStatus") Integer jobStatus);
 
@@ -88,10 +90,10 @@ public interface ScheduledQuartzJobMapper {
     /**
      * 查询project下，组和名称相同的任务
      *
-     * @param projectKey
-     * @param jobGroup
-     * @param jobName
-     * @return
+     * @param projectKey 项目 key
+     * @param jobGroup   分组
+     * @param jobName    任务名
+     * @return 任务列表
      */
     List<ScheduledQuartzJobInfo> getJobListByProjectGroupAndName(@Param("projectKey") String projectKey,
                                                                  @Param("jobGroup") String jobGroup,
@@ -100,11 +102,11 @@ public interface ScheduledQuartzJobMapper {
     /**
      * 统计project下，组和名称相同的任务
      *
-     * @param projectKey
-     * @param jobGroup
-     * @param jobClass
-     * @param jobMethod
-     * @return
+     * @param projectKey 项目 key
+     * @param jobGroup   分组
+     * @param jobClass   任务名
+     * @param jobMethod  任务方法
+     * @return ""
      */
     int countByProjectGroupAndMethod(@Param("projectKey") String projectKey,
                                      @Param("jobGroup") String jobGroup,
@@ -114,11 +116,11 @@ public interface ScheduledQuartzJobMapper {
     /**
      * 查询project下，组和名称相同的任务-排除自己
      *
-     * @param projectKey
-     * @param jobGroup
-     * @param jobClass
-     * @param jobMethod
-     * @param excludeJobId
+     * @param projectKey   项目 key
+     * @param jobGroup     分组
+     * @param jobClass     任务名
+     * @param jobMethod    任务方法
+     * @param excludeJobId ""
      * @return 统计值
      */
     int countByProjectGroupAndMethodExclude(@Param("projectKey") String projectKey,
@@ -131,9 +133,9 @@ public interface ScheduledQuartzJobMapper {
     /**
      * 根据项目与状态统计
      *
-     * @param projectKey
-     * @param jobStatus
-     * @return
+     * @param projectKey 项目key
+     * @param jobStatus  任务状态
+     * @return 行数
      */
     int countByProjectAndStatus(@Param("projectKey") String projectKey, @Param("jobStatus") Integer jobStatus);
 
